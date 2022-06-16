@@ -1,65 +1,62 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 # hr-platform
+
+## Функциональные требования
+
+1. Возможность авторизации и регистрации
+2. Возможность выбрать одно направление развития для сотрудника
+3. Возможность назначить ментора сотруднику
+4. Возможность создавать курсы и задачи
+5. Возможность у ментора назначить задачи или курсы для сотрудника
+6. Возможность у ментора просматривать прогресс сотрудников на курсах
+7. Возможность добавлять материалы для изучения сотруднику
+8. Возможность HR просматривать сотрудников
+9. Возможность менторов просматривать сотрудников
+10. Возможность ведения переписки между менторами / сотрудниками / HR
+11. Возможность сотрудников просматривать менторов
+12. Возможность просматривать сотрудников по направлениям
+
+## Нефункциональные требования
+
+1. Система должна работать 24/7
+2. Платформа должна загружаться не дольше 1 секунды
+3. Формат даты должен быть следующим : ДД.ММ.ГГГГ
+4. Система может быть недоступна не более 5 часов в год (SLA = 99.95%)
+5. 95% пользователей должны быть способны использовать 70% функций системы не более чем через 6 часов обучения.
+
+## Системные требования
+
+1. Необходимо логирование всех запросов
+2. Необходим бэкап базы данных раз в сутки
+3. Манипулирование данными в базе данных должно осуществляться через ORM
+
+## C4
+
+### Уровень контекста
+
+<img src="public/images/context.png">
+
+### Уровень контейнеров
+
+<img src="public/images/container.png">
+
+### Уровень компонентов
+
+<img src="public/images/component.png">
+
+### Уровень кода
+
+<img src="public/images/code.png">
+
+## Sequence diagram
+
+<img src="public/images/sequence.png">
+
+## SLA
+
+|                                                                                                    | Низкий | Средний | Высокий |
+|----------------------------------------------------------------------------------------------------|--------|---------|---------|
+| Поддержка системы                                                                                  | 24/7   | 24/7    | 24/7    |
+| Установка обновлений в СУБД                                                                        | +      | +       | +       |
+| Максимальное время ожидания ответа                                                                 | 24 ч   | 8 ч     | 2 ч     |
+| Бесплатное изменение настроек маршрутизаторов, не предусмотренных функционалом, согласованным в ТЗ | -      | -       | +       |
+| Резервное копирование БД по запросу                                                                | -      | +       | +       |
